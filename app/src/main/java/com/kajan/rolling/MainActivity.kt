@@ -3,8 +3,10 @@ package com.kajan.rolling
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +17,13 @@ class MainActivity : AppCompatActivity() {
         roll_Button.text = "roll dice"
 
         roll_Button.setOnClickListener {
-            Toast.makeText(this, "button clicked",Toast.LENGTH_SHORT).show()
+            roll()
         }
+    }
+
+    private fun roll() {
+        var roll_text: TextView = findViewById(R.id.roll_text)
+        var random = Random.nextInt(6)+1
+        roll_text.text = random.toString()
     }
 }
