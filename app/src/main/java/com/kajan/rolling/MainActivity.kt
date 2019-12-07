@@ -9,7 +9,9 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
+
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         roll_text.text = random.toString()
-        var roll_img:ImageView = findViewById(R.id.dice_img)
-        roll_img.setImageResource(drawable_Resource)
+        diceImage = findViewById(R.id.dice_img)
+        diceImage.setImageResource(drawable_Resource)
     }
 }
